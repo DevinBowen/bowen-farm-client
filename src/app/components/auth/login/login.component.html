@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div>
+    <h2>Login</h2>
+
+    <div style="margin-left: 20px; margin-top: 10px;">
+        <label for="email">Email:</label>
+        <input id="email" type="text" [(ngModel)]="credentials.email" />
+    </div>
+    <div style="margin-left: 20px; margin-top: 10px;">
+        <label for="password">Password:</label>
+        <input id="password" type="password" [(ngModel)]="credentials.password" />
+    </div>
+    <div *ngIf="missingCredentials" style="color: red; margin-left: 20px; margin-top: 10px;">
+        Email and password are required
+    </div>
+    <button
+        style="margin-left: 20px; margin-top: 15px; margin-bottom: 20px;"
+        type="submit"
+        color="accent"
+        (click)="login()">
+        Login
+    </button>
+    <button
+        style="margin-left: 20px; margin-top: 15px; margin-bottom: 20px;"
+        type="submit"
+        color="accent"
+        (click)="register()">
+        Register
+    </button>
+</div>
